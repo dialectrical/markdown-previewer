@@ -4,16 +4,6 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import marked from 'marked';
 
-class MarkdownExample extends React.Component {
-  getMarkdownText() {
-    var rawMarkup = marked('This is _Markdown_.', {sanitize: true});
-    return { __html: rawMarkup };
-  }
-  render() {
-    return <div dangerouslySetInnerHTML={this.getMarkdownText()} />
-  }
-}
-
 class OutputArea extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +25,6 @@ class TextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: placeholder};
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
